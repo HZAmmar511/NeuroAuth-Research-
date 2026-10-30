@@ -10,6 +10,14 @@ def require(x, name):
         raise ValueError(f"∆ undefined: {name}")
     return x
 
+def record(hist, item, execute, max_len):
+    hist["all"].append(item)
+    if execute:
+        hist["authorized"].append(item)
+    if max_len is not None:                 # None = بلا حد (مؤقتاً)
+        hist["all"] = hist["all"][-max_len:]
+        hist["authorized"] = hist["authorized"][-max_len:]
+
 
 # ───────── threshold─────────
 
