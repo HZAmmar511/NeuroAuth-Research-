@@ -29,7 +29,7 @@ def nlc_step(group, feat, cl, t_now):
     execute = functions.decision_maker(th_ok, ts_ok, rt_ok, eo_ok)
     if execute:
         s["t_fire"], s["tr"] = t_now, functions.refractory_period(cl, c["tr_max"], c["tr_min"])
-        functions.record(s["hist"], {"t": t_now, **feat}, execute, c["hist_max"])
+    functions.record(s["hist"], {"t": t_now, **feat}, execute, c["hist_max"])
 
     s["last_cl"] = cl
     return execute

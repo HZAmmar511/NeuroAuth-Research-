@@ -1,2 +1,2 @@
 import pipeline 
-import confing 
+import config 

@@ -11,3 +11,4 @@ def _group():
     }
 
 CFG = {g: _group() for g in ("Axial", "Hand", "Foot", "Devices")}
+# v = 
